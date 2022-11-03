@@ -6,7 +6,7 @@ eval "$linkk"
 echo "Connected to remote.it, starting proxy install..."
 
 echo "Making sure the system is updated..."
-sudo apt-get update && sudo apt-get upgrade
+sudo apt-get update# && sudo apt-get upgrade
 echo "The system was updated!"
 
 echo "Installing squid..."
