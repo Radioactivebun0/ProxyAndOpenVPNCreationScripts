@@ -32,7 +32,7 @@ eval "sudo htpasswd /etc/squid/squid_passwd $username"
 echo "Created user!"
 
 echo "Updating config file"
-sudo echo -n -e "auth_param basic program /usr/lib/squid/basic_ncsa_auth /etc/squid/squid_passwd\nacl ncsa_users proxy_auth REQUIRED\nhttp_access allow ncsa_users\n" > /etc/squid/squid.conf
+echo -e "auth_param basic program /usr/lib/squid/basic_ncsa_auth /etc/squid/squid_passwd\nacl ncsa_users proxy_auth REQUIRED\nhttp_access allow ncsa_users\n" | sudo tee -a /etc/squid/squid.conf
 echo "Updated config file!"
 
 sudo systemctl restart squid
