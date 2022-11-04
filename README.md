@@ -9,6 +9,6 @@ To run: `sh -c "$(curl -L https://raw.githubusercontent.com/Radioactivebun0/Prox
 The default port is `3128`
 
 ## OpenVPN
-To run: `sh -c "$(curl -L https://raw.githubusercontent.com/Radioactivebun0/ProxyAndOpenVPNCreationScripts/blob/main/openvpn.sh)"`
+To run: `sh -c "$(curl -L https://raw.githubusercontent.com/Radioactivebun0/ProxyAndOpenVPNCreationScripts/main/openvpn.sh)"`
 
 The default port is `1194`
