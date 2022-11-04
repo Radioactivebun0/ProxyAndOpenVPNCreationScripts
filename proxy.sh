@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 echo "what was the link that remote.it gave you? "
 read linkk 
@@ -35,6 +35,5 @@ echo "Updating config file"
 echo -e "auth_param basic program /usr/lib/squid/basic_ncsa_auth /etc/squid/squid_passwd\nacl ncsa_users proxy_auth REQUIRED\nhttp_access allow ncsa_users\n" | sudo tee -a /etc/squid/squid.conf
 echo "Updated config file!"
 
+trap 'sudo service squid restart' ERR
 sudo systemctl restart squid
-sudo systemctl restart squid
-sudo ufw allow 3128/tcp
