@@ -2,7 +2,7 @@
 
 echo "what was the link that remote.it gave you? "
 read linkk 
-eval "$linkk"
+eval "$linkk" >/dev/null
 echo "Connected to remote.it, starting proxy install..."
 
 echo "Making sure the system is updated..."
