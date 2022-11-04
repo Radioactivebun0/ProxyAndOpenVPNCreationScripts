@@ -84,7 +84,7 @@ def get_chromedriver(use_proxy=False, user_agent=None):
 def main():
     driver = get_chromedriver(use_proxy=True)
     driver.get('https://www.google.com/search?q=my+ip+address')
-    input('Press enter to quit:')
+    input('Press enter to quit: ')
     driver.quit()
 
 if __name__ == '__main__':
