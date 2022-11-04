@@ -10,29 +10,29 @@ sudo apt-get update
 echo "The system was updated!"
 
 echo "Installing squid..."
-sudo apt-get install squid >/dev/null
+sudo apt-get install squid
 echo "Installed squid!"
 
 echo "Installing apache2-utils"
-sudo apt-get install apache2-utils >/dev/null
+sudo apt-get install apache2-utils
 echo "Installed apache2-utils!"
 
 echo "Creating passwords file..."
-sudo touch /etc/squid/squid_passwd >/dev/null
+sudo touch /etc/squid/squid_passwd
 echo "Created passwords file!"
 
 echo "Updating file perms..."
-sudo chown proxy /etc/squid/squid_passwd >/dev/null
+sudo chown proxy /etc/squid/squid_passwd
 echo "Updated file perms!"
 
 echo "Creating user"
 echo "What do you want the username to be?"
 read username
-eval "sudo htpasswd /etc/squid/squid_passwd $username" >/dev/null
+eval "sudo htpasswd /etc/squid/squid_passwd $username"
 echo "Created user!"
 
 echo "Updating config file"
-echo -e "auth_param basic program /usr/lib/squid/basic_ncsa_auth /etc/squid/squid_passwd\nacl ncsa_users proxy_auth REQUIRED\nhttp_access allow ncsa_users\n" | sudo tee -a /etc/squid/squid.conf >/dev/null
+echo -e "auth_param basic program /usr/lib/squid/basic_ncsa_auth /etc/squid/squid_passwd\nacl ncsa_users proxy_auth REQUIRED\nhttp_access allow ncsa_users\n" | sudo tee -a /etc/squid/squid.conf
 echo "Updated config file!"
 
 sudo systemctl restart squid
