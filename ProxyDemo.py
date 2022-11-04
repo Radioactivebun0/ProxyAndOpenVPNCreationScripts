@@ -4,8 +4,10 @@ import zipfile
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 
-PROXY_HOST = 'proxy18.rt3.io'  # rotating proxy or host
-PROXY_PORT = 32748 # port
+IPandPort = input('What is the IP and Port from remote.it?\n> ').split(':')
+
+PROXY_HOST = IPandPort[0]  # rotating proxy or host
+PROXY_PORT = IPandPort[1] # port
 PROXY_USER = 'user1' # username
 PROXY_PASS = '0228' # password
 
@@ -82,7 +84,8 @@ def get_chromedriver(use_proxy=False, user_agent=None):
 def main():
     driver = get_chromedriver(use_proxy=True)
     driver.get('https://www.google.com/search?q=my+ip+address')
-    input('')
+    input('Press enter to quit:')
+    driver.quit()
 
 if __name__ == '__main__':
     main()
