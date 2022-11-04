@@ -10,11 +10,11 @@ sudo apt-get update
 echo "The system was updated!"
 
 echo "Installing squid..."
-sudo apt-get install squid
+sudo apt-get -y install squid >/dev/null
 echo "Installed squid!"
 
 echo "Installing apache2-utils"
-sudo apt-get install apache2-utils
+sudo apt-get -y install apache2-utils >/dev/null
 echo "Installed apache2-utils!"
 
 echo "Creating passwords file..."
