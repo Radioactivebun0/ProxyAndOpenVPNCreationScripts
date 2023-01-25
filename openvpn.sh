@@ -9,4 +9,4 @@ echo "Making sure the system is updated..."
 sudo apt-get update
 echo "The system was updated!"
 
-sh -c "$(curl -L https://raw.githubusercontent.com/Nyr/openvpn-install/master/openvpn-install.sh)"
+sudo sh -c "$(curl -L https://raw.githubusercontent.com/Nyr/openvpn-install/master/openvpn-install.sh)"
